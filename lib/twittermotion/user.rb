@@ -28,7 +28,7 @@ module Twitter
     # user.get_timeline(include_entities: 1) do |hash, ns_error|
     # end
     def get_timeline(options = {}, &block)
-      url = NSURL.URLWithString("http://api.twitter.com/1/statuses/home_timeline.json")
+      url = NSURL.URLWithString("http://api.twitter.com/1.1/statuses/home_timeline.json")
       request = TWRequest.alloc.initWithURL(url, parameters:options, requestMethod:TWRequestMethodGET)
       request.account = self.ac_account
       request.performRequestWithHandler(lambda {|response_data, url_response, error|
